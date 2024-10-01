@@ -13,15 +13,15 @@ Made with ☕ and 💜:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/8210107">
-        <img src="https://github.com/0.png" width="100px;" alt="Foto do Sandro Castro no GitHub"/><br>
+      <a href="https://github.com/SandroCunha8200785">
+        <img src="https://github.com/SandroCunha8200785.png" width="100px;" alt="Foto do Sandro Castro no GitHub"/><br>
         <sub>
           <b>Sandro Castro</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/8210107">
+      <a href="https://github.com/0">
         <img src="https://github.com/0.png" width="100px;" alt="Foto do Regina Paz no GitHub"/><br>
         <sub>
           <b>Regina Paz</b>
