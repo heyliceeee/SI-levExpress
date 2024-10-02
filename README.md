@@ -21,8 +21,8 @@ Made with ☕ and 💜:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/0">
-        <img src="https://github.com/0.png" width="100px;" alt="Foto do Regina Paz no GitHub"/><br>
+      <a href="https://github.com/Pazregina19">
+        <img src="https://github.com/Pazregina19.png" width="100px;" alt="Foto do Regina Paz no GitHub"/><br>
         <sub>
           <b>Regina Paz</b>
         </sub>
