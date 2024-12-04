@@ -18,11 +18,48 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // https://mvnrepository.com/artifact/io.camunda/spring-zeebe-starter
+    implementation group: 'io.camunda', name: 'spring-zeebe-starter', version: '8.3.4.1'
+
+    // https://mvnrepository.com/artifact/io.camunda.spring/spring-boot-starter-camunda
+    implementation group: 'io.camunda.spring', name: 'spring-boot-starter-camunda', version: '8.3.4.1'
+
+    implementation 'com.google.code.gson:gson:2.9.1'
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    implementation group: 'io.camunda.spring', name: 'spring-client-zeebe', version: '8.3.4'
+
+    // https://mvnrepository.com/artifact/io.camunda/zeebe-client-java
+    implementation group: 'io.camunda', name: 'zeebe-client-java', version: '8.3.4'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.1'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.16.1'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.16.1'
+
+    implementation 'org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter:7.18.0'
+
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+}
+
+bootJar {
+    duplicatesStrategy = 'exclude'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-parameters'
 }
