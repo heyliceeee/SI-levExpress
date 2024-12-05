@@ -23,6 +23,12 @@ public class registarDetalhesEncomenda {
             System.out.println("criar pedido de entrega -> INPUT output: "+ outputList +"\n");
 
             Map<String, Object> variables = job.getVariablesAsMap();
+
+            //TODO: ver oq retorna aqui
+            System.out.println("VARIABLES: "+ variables);
+
+            //TODO: resolver este erro
+            outputList = (List<Map<String, Object>>) variables.get("registar-detalhes-encomenda");
         }
         catch (Exception e){
             System.err.println("Erro rastrear-encomenda -> " + e.getMessage());
