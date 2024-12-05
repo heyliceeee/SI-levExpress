@@ -33,14 +33,12 @@ public class notificarEntregadoresDisponiveis {
         //todos os entregadores
         List<Entregador> entregadores = lerEntregadoresJSON();
 
-        //TODO: enviar email
-        notificarEntregadores(encomenda, entregadores);
+        //notificarEntregadores(encomenda, entregadores);
     }
 
     private void enviarNotificacaoEntregador(Encomenda encomenda, Entregador entregador){
         String subject = "\uD83D\uDE9A Nova Encomenda Disponível para Entrega – Envie Sua Proposta!";
 
-        //TODO: resto do email
         String messageBody =
                 "Olá " + entregador.getNome() + ",\n\n"+
                 "Estamos felizes em informá-lo sobre uma nova oportunidade de entrega disponível na sua área. Aqui estão os detalhes da encomenda:\n\n" +
