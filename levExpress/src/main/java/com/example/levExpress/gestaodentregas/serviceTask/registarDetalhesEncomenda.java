@@ -9,6 +9,7 @@ import io.camunda.zeebe.spring.client.annotation.JobWorker;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,34 +41,39 @@ public class registarDetalhesEncomenda {
         // Criar o ObjectMapper para JSON
         ObjectMapper objectMapper = new ObjectMapper();
 
-        // Criar o node principal para o JSON
-        ObjectNode rootNode = objectMapper.createObjectNode();
+        // Carregar o ficheiro JSON existente
+        File jsonFile = new File("BD.json");
+        ObjectNode rootNode = null;
 
-        // Preencher os dados principais
-        rootNode.put("origem", (String) detalhesEncomenda.get("origem"));
-        rootNode.put("destino", (String) detalhesEncomenda.get("destino"));
-        rootNode.put("peso", (String) detalhesEncomenda.get("peso"));
-        rootNode.put("dataInicio", (String) detalhesEncomenda.get("dataInicio"));
-        rootNode.put("duracao", (String) detalhesEncomenda.get("duracao"));
-        rootNode.put("foto", (String) detalhesEncomenda.get("foto"));
-        rootNode.put("descricao", (String) detalhesEncomenda.get("descricao"));
+        if (jsonFile.exists() && jsonFile.length() > 0) {
+            rootNode = (ObjectNode) objectMapper.readTree(jsonFile);
+        }
 
-        // Criar o nó para dimensões
+        // Criar a seção "registar-detalhes-encomenda"
+        ObjectNode registarNode = objectMapper.createObjectNode();
+        registarNode.put("origem", (String) detalhesEncomenda.get("origem"));
+        registarNode.put("destino", (String) detalhesEncomenda.get("destino"));
+        registarNode.put("peso", (String) detalhesEncomenda.get("peso"));
+        registarNode.put("dataInicio", (String) detalhesEncomenda.get("dataInicio"));
+        registarNode.put("duracao", (String) detalhesEncomenda.get("duracao"));
+        registarNode.put("foto", (String) detalhesEncomenda.get("foto"));
+        registarNode.put("descricao", (String) detalhesEncomenda.get("descricao"));
+        registarNode.put("estado", (String) detalhesEncomenda.get("estado"));
+
+        // Criar o node para dimensões
         ObjectNode dimensaoNode = objectMapper.createObjectNode();
         dimensaoNode.put("altura", (String) detalhesEncomenda.get("dimensaoAltura"));
         dimensaoNode.put("largura", (String) detalhesEncomenda.get("dimensaoLargura"));
         dimensaoNode.put("profundidade", (String) detalhesEncomenda.get("dimensaoProfundidade"));
 
-        // Adicionar o nó de dimensões ao nó principal
-        rootNode.set("dimensao", dimensaoNode);
+        // Adicionar o node de dimensões ao node principal
+        registarNode.set("dimensao", dimensaoNode);
 
-        // Criar o JSON final
-        ObjectNode finalJson = objectMapper.createObjectNode();
-        finalJson.set("registar-detalhes-encomenda", rootNode);
+        // Atualizar o node principal
+        rootNode.set("registar-detalhes-encomenda", registarNode);
 
-        // Escrever o JSON no ficheiro
-        File jsonFile = new File("registar-detalhes-encomenda.json");
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, finalJson);
+        // Salvar o JSON atualizado no ficheiro
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, rootNode);
 
         // Exibir mensagem de sucesso
         System.out.println("JSON salvo no ficheiro: " + jsonFile.getAbsolutePath());
