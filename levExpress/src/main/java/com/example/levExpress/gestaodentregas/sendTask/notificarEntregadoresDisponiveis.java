@@ -108,7 +108,7 @@ public class notificarEntregadoresDisponiveis {
     }
 
 
-    private Encomenda lerEncomendaJSON() throws IOException {
+    public Encomenda lerEncomendaJSON() throws IOException {
 
         try {
             // Ler o conteúdo de "registar-detalhes-encomenda" e mapear para a classe
