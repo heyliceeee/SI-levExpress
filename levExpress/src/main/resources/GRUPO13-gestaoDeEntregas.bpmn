@@ -77,20 +77,18 @@
     <bpmn:sequenceFlow id="Flow_1o7b9d6" sourceRef="Activity_1jzfhn4" targetRef="Activity_0m1dre5" />
     <bpmn:sequenceFlow id="Flow_022u1xu" sourceRef="Activity_086ae3c" targetRef="Activity_0qrt8xy" />
     <bpmn:sequenceFlow id="Flow_0caw5n0" sourceRef="Activity_0uh55n6" targetRef="Activity_086ae3c" />
-    <bpmn:sequenceFlow id="Flow_0zvyc09" sourceRef="Activity_02tanju" targetRef="Activity_0uh55n6" />
-    <bpmn:sequenceFlow id="Flow_05utih4" name="cliente aceita proposta" sourceRef="Gateway_114g42c" targetRef="Activity_02tanju">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=yes</bpmn:conditionExpression>
+    <bpmn:sequenceFlow id="Flow_05utih4" name="cliente aceita proposta" sourceRef="Gateway_114g42c" targetRef="Activity_0uh55n6">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=radio_uch0eq = "yes"</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_0xwrxpr" sourceRef="Activity_0deauws" targetRef="Gateway_114g42c" />
     <bpmn:sequenceFlow id="Flow_02m0xkf" name="interessado" sourceRef="Gateway_0h49pvu" targetRef="Activity_0deauws">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=escolha(yes)</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=escolha = "yes"</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0jc8tjs" name="cliente não aceita proposta" sourceRef="Gateway_114g42c" targetRef="Event_1okcodl">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(negand)</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=radio_uch0eq = "no"</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1l9par2" sourceRef="Activity_1phq1c7" targetRef="Event_0fzbscw" />
     <bpmn:sequenceFlow id="Flow_0knvwq7" name="não houve nenhum entregador interessado" sourceRef="Gateway_0h49pvu" targetRef="Activity_1phq1c7">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=escolha(no)</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=escolha = "no"</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0z8rt9c" sourceRef="StartEvent_1" targetRef="Activity_1jzfhn4" />
     <bpmn:dataObjectReference id="DataObjectReference_0upgwxc" name="Feedback" dataObjectRef="DataObject_0rg4rll">
@@ -232,12 +230,17 @@
 }</bpmn:documentation>
     </bpmn:dataObjectReference>
     <bpmn:dataObject id="DataObject_1ifmfmy" />
-    <bpmn:userTask id="Activity_02tanju" name="Selecionar Entregador e Confirmar Pedido">
+    <bpmn:userTask id="Activity_02tanju" name="Aceitar/Recusar Proposta">
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="selecionar-entregador-e-confirmar-pedido-0qo5h2z" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=valor" target="valor" />
+          <zeebe:input source="=tempoEstimado" target="tempoEstimado" />
+          <zeebe:output source="=Submit" target="escolhaProposta" />
+        </zeebe:ioMapping>
       </bpmn:extensionElements>
-      <bpmn:incoming>Flow_05utih4</bpmn:incoming>
-      <bpmn:outgoing>Flow_0zvyc09</bpmn:outgoing>
+      <bpmn:incoming>Flow_0vcc0s1</bpmn:incoming>
+      <bpmn:outgoing>Flow_1m4m9mf</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:endEvent id="Event_0fzbscw" name="terminar processo entrega">
       <bpmn:incoming>Flow_1l9par2</bpmn:incoming>
@@ -252,20 +255,25 @@
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="recolher-e-transportar-encomenda-181b39m" />
       </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0zvyc09</bpmn:incoming>
+      <bpmn:incoming>Flow_05utih4</bpmn:incoming>
       <bpmn:outgoing>Flow_0caw5n0</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:exclusiveGateway id="Gateway_114g42c" name="Aceitar proposta?">
-      <bpmn:incoming>Flow_0xwrxpr</bpmn:incoming>
+      <bpmn:incoming>Flow_1m4m9mf</bpmn:incoming>
       <bpmn:outgoing>Flow_05utih4</bpmn:outgoing>
       <bpmn:outgoing>Flow_0jc8tjs</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:userTask id="Activity_0deauws" name="Criar Proposta">
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="cria-proposta-0x3tzc9" />
+        <zeebe:ioMapping>
+          <zeebe:output source="=valor" target="valor" />
+          <zeebe:output source="=veiculo" target="veiculo" />
+          <zeebe:output source="=tempoEstimado" target="tempoEstimado" />
+        </zeebe:ioMapping>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_02m0xkf</bpmn:incoming>
-      <bpmn:outgoing>Flow_0xwrxpr</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0vcc0s1</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:endEvent id="Event_1okcodl" name="terminar processo entrega">
       <bpmn:incoming>Flow_0jc8tjs</bpmn:incoming>
@@ -294,7 +302,7 @@
       <bpmn:outgoing>Flow_02m0xkf</bpmn:outgoing>
       <bpmn:outgoing>Flow_0knvwq7</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:userTask id="Activity_1g47eja" name="Entregador responde ao email">
+    <bpmn:userTask id="Activity_1g47eja" name="Responder ao email">
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="entregador-responde-ao-email-08q0czf" />
         <zeebe:ioMapping>
@@ -304,6 +312,8 @@
       <bpmn:incoming>Flow_09g08ao</bpmn:incoming>
       <bpmn:outgoing>Flow_14qe477</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0vcc0s1" sourceRef="Activity_0deauws" targetRef="Activity_02tanju" />
+    <bpmn:sequenceFlow id="Flow_1m4m9mf" sourceRef="Activity_02tanju" targetRef="Gateway_114g42c" />
   </bpmn:process>
   <bpmn:message id="Message_26tdb2p" name="Message_26tdb2p">
     <bpmn:extensionElements />
@@ -381,6 +391,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1145zv1_di" bpmnElement="Activity_02tanju">
         <dc:Bounds x="950" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0fzbscw_di" bpmnElement="Event_0fzbscw">
         <dc:Bounds x="702" y="162" width="36" height="36" />
@@ -400,7 +411,7 @@
       <bpmndi:BPMNShape id="Gateway_114g42c_di" bpmnElement="Gateway_114g42c" isMarkerVisible="true">
         <dc:Bounds x="975" y="515" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1027" y="533" width="86" height="14" />
+          <dc:Bounds x="957" y="473" width="86" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1skgrjq_di" bpmnElement="Activity_0deauws">
@@ -496,21 +507,12 @@
         <di:waypoint x="1250" y="540" />
         <di:waypoint x="1250" y="420" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0zvyc09_di" bpmnElement="Flow_0zvyc09">
-        <di:waypoint x="1050" y="200" />
-        <di:waypoint x="1140" y="200" />
-        <di:waypoint x="1140" y="500" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_05utih4_di" bpmnElement="Flow_05utih4">
-        <di:waypoint x="1000" y="515" />
-        <di:waypoint x="1000" y="240" />
+        <di:waypoint x="1025" y="540" />
+        <di:waypoint x="1130" y="540" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="969" y="244" width="65" height="27" />
+          <dc:Bounds x="1047" y="516" width="65" height="27" />
         </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0xwrxpr_di" bpmnElement="Flow_0xwrxpr">
-        <di:waypoint x="920" y="540" />
-        <di:waypoint x="975" y="540" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_02m0xkf_di" bpmnElement="Flow_02m0xkf">
         <di:waypoint x="595" y="580" />
@@ -526,7 +528,7 @@
         <di:waypoint x="1000" y="730" />
         <di:waypoint x="1102" y="730" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="975" y="645" width="86" height="27" />
+          <dc:Bounds x="959" y="586" width="86" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1l9par2_di" bpmnElement="Flow_1l9par2">
@@ -554,6 +556,15 @@
       <bpmndi:BPMNEdge id="Flow_14qe477_di" bpmnElement="Flow_14qe477">
         <di:waypoint x="570" y="540" />
         <di:waypoint x="570" y="555" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0vcc0s1_di" bpmnElement="Flow_0vcc0s1">
+        <di:waypoint x="870" y="500" />
+        <di:waypoint x="870" y="200" />
+        <di:waypoint x="950" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1m4m9mf_di" bpmnElement="Flow_1m4m9mf">
+        <di:waypoint x="1000" y="240" />
+        <di:waypoint x="1000" y="515" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="DataStoreReference_1ijf9d6_di" bpmnElement="DataStoreReference_1ijf9d6">
         <dc:Bounds x="455" y="935" width="50" height="50" />
