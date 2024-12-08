@@ -30,7 +30,7 @@ public class notificarEntregadoresDisponiveis {
         //todos os entregadores
         List<Entregador> entregadores = lerEntregadoresJSON();
 
-        //notificarEntregadores(encomenda, entregadores);
+        notificarEntregadores(encomenda, entregadores);
     }
 
     private void enviarNotificacaoEntregador(Encomenda encomenda, Entregador entregador){
