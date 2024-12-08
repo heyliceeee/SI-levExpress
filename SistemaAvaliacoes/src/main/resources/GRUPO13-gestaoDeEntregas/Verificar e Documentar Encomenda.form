@@ -1,0 +1,51 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "c101958"
+  },
+  "schemaVersion": 17,
+  "id": "verificar-e-documentar-encomenda-0c3f4sy",
+  "components": [
+    {
+      "label": "Foto ao buscar a encomenda",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_1ehen2e",
+        "columns": null
+      },
+      "id": "Field_0ctwu41",
+      "key": "filepicker_csla3ed"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_1gn576y",
+        "columns": null
+      },
+      "id": "Field_0ab1ina"
+    },
+    {
+      "label": "Foto ao entregar a encomenda",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_0l4bcyh",
+        "columns": null
+      },
+      "id": "Field_1r3xgkq",
+      "key": "filepicker_dih9ih"
+    },
+    {
+      "label": "Guardar Alterações",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_0yzo2wm",
+        "columns": null
+      },
+      "id": "Field_1xgdd8t"
+    }
+  ],
+  "type": "default"
+}

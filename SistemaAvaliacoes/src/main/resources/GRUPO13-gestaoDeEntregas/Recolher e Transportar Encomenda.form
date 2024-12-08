@@ -1,0 +1,64 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "c101958"
+  },
+  "schemaVersion": 17,
+  "id": "recolher-e-transportar-encomenda-181b39m",
+  "components": [
+    {
+      "label": "Já tem consigo a encomenda?",
+      "values": [
+        {
+          "label": "Sim",
+          "value": "yes"
+        },
+        {
+          "label": "Não",
+          "value": "no"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_0braras",
+        "columns": null
+      },
+      "id": "Field_1vxrti6",
+      "key": "radio_ucuxo8"
+    },
+    {
+      "label": "Se já tem consigo a encomenda, vai agora realizar o transporte?",
+      "values": [
+        {
+          "label": "Sim",
+          "value": "yes"
+        },
+        {
+          "label": "Não",
+          "value": "no"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_0gt486u",
+        "columns": null
+      },
+      "id": "Field_05xq49y",
+      "key": "radio_zp4q7",
+      "disabled": false
+    },
+    {
+      "label": "Guardar Alterações",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_12o6fk0",
+        "columns": null
+      },
+      "id": "Field_0qgcc89"
+    }
+  ],
+  "type": "default"
+}

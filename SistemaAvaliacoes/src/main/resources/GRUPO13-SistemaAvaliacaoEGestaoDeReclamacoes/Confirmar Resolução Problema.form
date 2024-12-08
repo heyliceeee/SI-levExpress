@@ -1,0 +1,80 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "fc945f5"
+  },
+  "schemaVersion": 17,
+  "id": "Confirmacao-Pedido",
+  "components": [
+    {
+      "text": "# Confirmar Resolução Problema",
+      "type": "text",
+      "layout": {
+        "row": "Row_040ufwv",
+        "columns": null
+      },
+      "id": "Field_1hmuvvh"
+    },
+    {
+      "label": "Pronlema resolvido?",
+      "values": [
+        {
+          "label": "Sim",
+          "value": "yes"
+        },
+        {
+          "label": "Não",
+          "value": "no"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_03075fo",
+        "columns": null
+      },
+      "id": "Field_07zzlu8",
+      "key": "radio_b7tnjq"
+    },
+    {
+      "label": "Grau de satisfação com equipa de suporte(opcional)",
+      "values": [
+        {
+          "label": "Muito Bom",
+          "value": "value"
+        },
+        {
+          "label": "Bom",
+          "value": "value2"
+        },
+        {
+          "label": "Mau",
+          "value": "value3"
+        },
+        {
+          "label": "Péssimo",
+          "value": "value4"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_07e9jbh",
+        "columns": null
+      },
+      "id": "Field_1dlsyef",
+      "key": "radio_qh6t78"
+    },
+    {
+      "label": "Guardar alterações",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_05mzsye",
+        "columns": null
+      },
+      "id": "Field_1djacxi"
+    }
+  ],
+  "type": "default"
+}
