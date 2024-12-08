@@ -1,0 +1,43 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "c101958"
+  },
+  "schemaVersion": 17,
+  "id": "confirmar-entrega-1ezfiic",
+  "components": [
+    {
+      "label": "Confirma que recebeu a encomenda?",
+      "values": [
+        {
+          "label": "Sim",
+          "value": "yes"
+        },
+        {
+          "label": "Não",
+          "value": "no"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_0cr2mtl",
+        "columns": null
+      },
+      "id": "Field_1dnsc1u",
+      "key": "radio_ne0seg"
+    },
+    {
+      "label": "Guardar Alterações",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1j9dkk7",
+        "columns": null
+      },
+      "id": "Field_13uk6po"
+    }
+  ],
+  "type": "default"
+}

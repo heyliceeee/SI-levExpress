@@ -1,0 +1,131 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "c101958"
+  },
+  "schemaVersion": 17,
+  "id": "recolher-feedback-opcional-0ewedrw",
+  "components": [
+    {
+      "text": "# Comentário",
+      "type": "text",
+      "layout": {
+        "row": "Row_0w6e2gp",
+        "columns": null
+      },
+      "id": "Field_19ez8am"
+    },
+    {
+      "text": "#### O que achou do serviço?",
+      "type": "text",
+      "layout": {
+        "row": "Row_0uh26b0",
+        "columns": null
+      },
+      "id": "Field_0m0ma6o"
+    },
+    {
+      "text": "###### Estrelas",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ure7i2",
+        "columns": 2
+      },
+      "id": "Field_0qzwrvr"
+    },
+    {
+      "label": "",
+      "type": "number",
+      "layout": {
+        "row": "Row_1ure7i2",
+        "columns": 2
+      },
+      "id": "Field_1dcu0kr",
+      "key": "number_5onabt",
+      "defaultValue": 5,
+      "validate": {
+        "required": true,
+        "min": 0,
+        "max": 5
+      }
+    },
+    {
+      "text": "##### ⭐",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ure7i2",
+        "columns": 2
+      },
+      "id": "Field_1wv5et1"
+    },
+    {
+      "height": 10,
+      "type": "spacer",
+      "layout": {
+        "row": "Row_09vq5kt",
+        "columns": null
+      },
+      "id": "Field_07cs5sy"
+    },
+    {
+      "text": "###### Deixa um comentário",
+      "type": "text",
+      "layout": {
+        "row": "Row_1gr9f3a",
+        "columns": null
+      },
+      "id": "Field_0s6zmdv"
+    },
+    {
+      "label": "",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1pkl1yp",
+        "columns": null
+      },
+      "id": "Field_0i3s79z",
+      "key": "textarea_n029of"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_1jjlxfc",
+        "columns": null
+      },
+      "id": "Field_1810x6e"
+    },
+    {
+      "label": "Adiciona uma foto",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_05i4yw3",
+        "columns": null
+      },
+      "id": "Field_03gxv3j",
+      "key": "filepicker_ay3fr"
+    },
+    {
+      "label": "Guardar",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_14hxkct",
+        "columns": 2
+      },
+      "id": "Field_1j2xr15"
+    },
+    {
+      "label": "Skip",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_14hxkct",
+        "columns": 2
+      },
+      "id": "Field_1et4ywa"
+    }
+  ],
+  "type": "default"
+}

@@ -1,0 +1,216 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "f210d35"
+  },
+  "schemaVersion": 17,
+  "id": "criar-pedido-de-entrega-0ntg0o7",
+  "components": [
+    {
+      "text": "# Criar Encomenda",
+      "type": "text",
+      "layout": {
+        "row": "Row_0cclxqq",
+        "columns": null
+      },
+      "id": "Field_1azdmjw"
+    },
+    {
+      "subtype": "datetime",
+      "dateLabel": "Hora da Entrega",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_09grdoy",
+        "columns": null
+      },
+      "id": "Field_0rtezjx",
+      "key": "dataInicio",
+      "timeLabel": "",
+      "timeSerializingFormat": "utc_offset",
+      "timeInterval": 15
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_03r2u96",
+        "columns": null
+      },
+      "id": "Field_0cm3d8x"
+    },
+    {
+      "label": "Destino Inicial",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1dff2p2",
+        "columns": null
+      },
+      "id": "Field_1ekjw7m",
+      "key": "origem",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Destino Final",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_123d9xa",
+        "columns": null
+      },
+      "id": "Field_0tbr4ck",
+      "key": "destino",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_1io4cll",
+        "columns": null
+      },
+      "id": "Field_0jdnugj"
+    },
+    {
+      "text": "###### Dimensões",
+      "type": "text",
+      "layout": {
+        "row": "Row_0kymynd",
+        "columns": 16
+      },
+      "id": "Field_0dqbtd5",
+      "properties": { }
+    },
+    {
+      "label": "",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0k50x2i",
+        "columns": 2
+      },
+      "id": "Field_1t4h9gy",
+      "key": "dimensaoAltura",
+      "description": "altura",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0k50x2i",
+        "columns": 2
+      },
+      "id": "Field_1naiqxi",
+      "key": "dimensaoLargura",
+      "description": "largura",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0k50x2i",
+        "columns": 2
+      },
+      "id": "Field_08vtntt",
+      "key": "dimensaoProfundidade",
+      "description": "profundidade",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "text": "##### cm",
+      "type": "text",
+      "layout": {
+        "row": "Row_0k50x2i",
+        "columns": null
+      },
+      "id": "Field_1g7jr93"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_0yq7igc",
+        "columns": null
+      },
+      "id": "Field_0kd7sfr"
+    },
+    {
+      "label": "Peso",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1qdztdb",
+        "columns": 6
+      },
+      "id": "Field_1mxk4aa",
+      "key": "peso",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "text": "##### kg",
+      "type": "text",
+      "layout": {
+        "row": "Row_1qdztdb",
+        "columns": null
+      },
+      "id": "Field_1uf7544"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_1yaq00r",
+        "columns": null
+      },
+      "id": "Field_0p2lelx"
+    },
+    {
+      "label": "Descrição",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1hj56tw",
+        "columns": null
+      },
+      "id": "Field_0uw4zgk",
+      "key": "descricao",
+      "description": "Fornece uma breve descrição sobre a tua encomenda"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_02n002l",
+        "columns": null
+      },
+      "id": "Field_1dlrirr"
+    },
+    {
+      "label": "URL da foto da encomenda",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_19vvs5s",
+        "columns": null
+      },
+      "id": "Field_1gfhqwy",
+      "key": "foto"
+    },
+    {
+      "label": "Criar",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_04o5p2l",
+        "columns": null
+      },
+      "id": "Field_1ngo35c"
+    }
+  ],
+  "type": "default"
+}

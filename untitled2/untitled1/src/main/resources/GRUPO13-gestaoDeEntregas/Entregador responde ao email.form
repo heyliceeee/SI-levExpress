@@ -1,0 +1,42 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "0d4ab51"
+  },
+  "schemaVersion": 17,
+  "id": "entregador-responde-ao-email-08q0czf",
+  "components": [
+    {
+      "text": "# Resposta Email",
+      "type": "text",
+      "layout": {
+        "row": "Row_1t0ns0p",
+        "columns": null
+      },
+      "id": "Field_1kxi4x6"
+    },
+    {
+      "label": "Tem interesse em fazer uma proposta para esta encomenda?",
+      "values": [
+        {
+          "label": "Sim",
+          "value": "yes"
+        },
+        {
+          "label": "Não",
+          "value": "no"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_0z6s36g",
+        "columns": null
+      },
+      "id": "Field_0r3n56o",
+      "key": "radio_d2obcp"
+    }
+  ],
+  "type": "default"
+}
