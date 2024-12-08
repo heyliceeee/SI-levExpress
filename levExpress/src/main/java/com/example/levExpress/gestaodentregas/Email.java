@@ -1,4 +1,4 @@
-package com.example.levExpress;
+package com.example.levExpress.gestaodentregas;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

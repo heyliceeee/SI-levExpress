@@ -95,9 +95,14 @@
     <bpmn:endEvent id="Event_05dpqut" name="terminar processo entrega">
       <bpmn:incoming>Flow_0suwauu</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:userTask id="Activity_0alho7a" name="Recolher Feedback (Opcional)">
+    <bpmn:userTask id="Activity_0alho7a" name="Recolher Feedback">
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="recolher-feedback-opcional-0ewedrw" />
+        <zeebe:ioMapping>
+          <zeebe:output source="=estrela" target="estrela" />
+          <zeebe:output source="=comentario" target="comentario" />
+          <zeebe:output source="=foto" target="foto" />
+        </zeebe:ioMapping>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0a5b1wk</bpmn:incoming>
       <bpmn:outgoing>Flow_1sxipl5</bpmn:outgoing>
@@ -249,18 +254,6 @@
     <bpmn:startEvent id="StartEvent_1" name="Início da Entrega">
       <bpmn:outgoing>Flow_0z8rt9c</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:sendTask id="Activity_1xcaa" name="Notificar status da Encomenda">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="notificar-status-encomenda" />
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0caw5n0</bpmn:incoming>
-      <bpmn:outgoing>Flow_0rs9zr3</bpmn:outgoing>
-      <bpmn:property id="Property_02pk5hj" name="__targetRef_placeholder" />
-      <bpmn:dataInputAssociation id="DataInputAssociation_09fhzoa">
-        <bpmn:sourceRef>DataObjectReference_0thkt6v</bpmn:sourceRef>
-        <bpmn:targetRef>Property_02pk5hj</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-    </bpmn:sendTask>
     <bpmn:sequenceFlow id="Flow_14qe477" sourceRef="Activity_1g47eja" targetRef="Gateway_0h49pvu" />
     <bpmn:exclusiveGateway id="Gateway_0h49pvu" name="Entregador Interessado?">
       <bpmn:incoming>Flow_14qe477</bpmn:incoming>
@@ -291,6 +284,18 @@
       <bpmn:outgoing>Flow_0e2qw7j</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_0e2qw7j" sourceRef="Activity_12apwzv" targetRef="Gateway_18ovbm5" />
+    <bpmn:sendTask id="Activity_1xcaa" name="Notificar status da Encomenda">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="notificar-status-encomenda" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0caw5n0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0rs9zr3</bpmn:outgoing>
+      <bpmn:property id="Property_02pk5hj" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_09fhzoa">
+        <bpmn:sourceRef>DataObjectReference_0thkt6v</bpmn:sourceRef>
+        <bpmn:targetRef>Property_02pk5hj</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:sendTask>
   </bpmn:process>
   <bpmn:message id="Message_26tdb2p" name="Message_26tdb2p">
     <bpmn:extensionElements />
@@ -331,6 +336,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1e9pex1_di" bpmnElement="Activity_0alho7a">
         <dc:Bounds x="1650" y="650" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1hlfbwk_di" bpmnElement="Activity_1xc9cdi">
         <dc:Bounds x="1540" y="340" width="100" height="80" />
@@ -402,9 +408,6 @@
           <dc:Bounds x="228" y="205" width="84" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0w8mfl2_di" bpmnElement="Activity_1xcaa">
-        <dc:Bounds x="1200" y="140" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0h49pvu_di" bpmnElement="Gateway_0h49pvu" isMarkerVisible="true">
         <dc:Bounds x="545" y="555" width="50" height="50" />
         <bpmndi:BPMNLabel>
@@ -418,6 +421,9 @@
       <bpmndi:BPMNShape id="Activity_12apwzv_di" bpmnElement="Activity_12apwzv">
         <dc:Bounds x="1310" y="650" width="100" height="80" />
         <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0w8mfl2_di" bpmnElement="Activity_1xcaa">
+        <dc:Bounds x="1200" y="160" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0suwauu_di" bpmnElement="Flow_0suwauu">
         <di:waypoint x="1640" y="380" />
@@ -458,8 +464,8 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0caw5n0_di" bpmnElement="Flow_0caw5n0">
         <di:waypoint x="1180" y="500" />
-        <di:waypoint x="1180" y="180" />
-        <di:waypoint x="1200" y="180" />
+        <di:waypoint x="1180" y="200" />
+        <di:waypoint x="1200" y="200" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_05utih4_di" bpmnElement="Flow_05utih4">
         <di:waypoint x="1025" y="540" />
@@ -515,8 +521,8 @@
         <di:waypoint x="1000" y="515" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0rs9zr3_di" bpmnElement="Flow_0rs9zr3">
-        <di:waypoint x="1300" y="180" />
-        <di:waypoint x="1360" y="180" />
+        <di:waypoint x="1300" y="200" />
+        <di:waypoint x="1360" y="200" />
         <di:waypoint x="1360" y="650" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0e2qw7j_di" bpmnElement="Flow_0e2qw7j">
@@ -561,8 +567,8 @@
         <di:waypoint x="450" y="183" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataInputAssociation_09fhzoa_di" bpmnElement="DataInputAssociation_09fhzoa">
-        <di:waypoint x="1532" y="247" />
-        <di:waypoint x="1300" y="202" />
+        <di:waypoint x="1532" y="248" />
+        <di:waypoint x="1300" y="218" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

@@ -42,7 +42,7 @@ public class registarDetalhesEncomenda {
         ObjectMapper objectMapper = new ObjectMapper();
 
         // Carregar o ficheiro JSON existente
-        File jsonFile = new File("BD.json");
+        File jsonFile = new File("D:\\githubProjects\\SI-levExpress\\levExpress\\src\\main\\java\\com\\example\\levExpress\\gestaodentregas\\BD.json");
         ObjectNode rootNode = null;
 
         if (jsonFile.exists() && jsonFile.length() > 0) {

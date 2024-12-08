@@ -1,10 +1,8 @@
 package com.example.levExpress.gestaodentregas.sendTask;
 
-import com.example.levExpress.Email;
+import com.example.levExpress.gestaodentregas.Email;
 import com.example.levExpress.classes.Cliente;
 import com.example.levExpress.classes.Encomenda;
-import com.example.levExpress.classes.Entregador;
-import com.example.levExpress.gestaodentregas.serviceTask.registarDetalhesEncomenda;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.camunda.zeebe.client.api.response.ActivatedJob;
@@ -12,19 +10,13 @@ import io.camunda.zeebe.client.api.worker.JobClient;
 import io.camunda.zeebe.spring.client.annotation.JobWorker;
 import org.springframework.stereotype.Component;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 
 @Component
 public class notificarStatusEncomenda {
 
-    File jsonFile = new File("BD.json"); // Caminho do ficheiro JSON
+    File jsonFile = new File("D:\\githubProjects\\SI-levExpress\\levExpress\\src\\main\\java\\com\\example\\levExpress\\gestaodentregas\\BD.json"); // Caminho do ficheiro JSON
     ObjectMapper objectMapper = new ObjectMapper(); // Criar ObjectMapper para manipular o JSON
 
 
@@ -49,7 +41,7 @@ public class notificarStatusEncomenda {
         ObjectMapper objectMapper = new ObjectMapper();
 
         // Carregar o ficheiro JSON existente
-        File jsonFile = new File("BD.json");
+        File jsonFile = new File("D:\\githubProjects\\SI-levExpress\\levExpress\\src\\main\\java\\com\\example\\levExpress\\gestaodentregas\\BD.json");
         ObjectNode rootNode = null;
 
         if (jsonFile.exists() && jsonFile.length() > 0) {
