@@ -19,18 +19,18 @@
     "foto" : "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1732465133/ygbmbkjitd6gld0jfcke.jpg"
   },
   "registar-detalhes-encomenda" : {
-    "origem" : "Universidade - Escola Superior de Tecnologia e Gestão de Felgueiras, Rua António Pinto Ferreira, Margaride (Santa Eulália), Várzea, Lagares, Varziela e Moure, Felgueiras, Porto, 4610-165, Portugal",
-    "destino" : "Água Longa, Santo Tirso, Porto, Portugal",
-    "peso" : "10kg",
-    "dataInicio" : "2024-12-13T11:45+00:00",
+    "origem" : "a",
+    "destino" : "a",
+    "peso" : "1kg",
+    "dataInicio" : "2024-12-12T11:45+00:00",
     "duracao" : "31 min",
-    "foto" : "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1731501534/lqagdhvetisemmzom0ij.jpg",
-    "descricao" : "Encomenda de livros e revistas em papel",
-    "estado" : "naoIniciado",
+    "foto" : "a",
+    "descricao" : "a",
+    "estado" : "entregue",
     "dimensao" : {
-      "altura" : "12cm",
-      "largura" : "22cm",
-      "profundidade" : "34cm"
+      "altura" : "1cm",
+      "largura" : "1cm",
+      "profundidade" : "1cm"
     }
   }
 }

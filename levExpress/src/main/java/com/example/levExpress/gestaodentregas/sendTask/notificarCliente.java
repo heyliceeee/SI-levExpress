@@ -1,5 +1,6 @@
 package com.example.levExpress.gestaodentregas.sendTask;
 
+import com.example.levExpress.Email;
 import com.example.levExpress.classes.Cliente;
 import com.example.levExpress.classes.Encomenda;
 import com.example.levExpress.classes.Entregador;
@@ -37,6 +38,9 @@ public class notificarCliente {
     }
 
     private void enviarNotificacaoCliente(Encomenda encomenda, Cliente cliente){
+
+
+
         String subject = "\uD83D\uDE9A Sem Propostas para a sua Encomenda";
 
         String messageBody =
@@ -58,40 +62,7 @@ public class notificarCliente {
                         "Gestão de Entregas - LevExpress\n" +
                         "alicedias@levexpress.com";
 
-        // Configurações para o servidor de e-mail (ajuste conforme necessário)
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
-
-        // Credenciais de e-mail
-        String username = "noreply.tecourses@gmail.com";
-        String password = "ypla lbis djic pulw";
-
-        // Cria uma sessão com autenticação
-        Session session = Session.getInstance(props, new Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
-            }
-        });
-
-        try {
-            // Cria uma mensagem de e-mail
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(cliente.getEmail()));
-            message.setSubject(subject);
-            message.setText(messageBody);
-
-            // Envia a mensagem
-            Transport.send(message);
-
-            System.out.println("E-mail enviado com sucesso para: " + cliente.getEmail());
-
-        } catch (MessagingException e) {
-            throw new RuntimeException("Erro ao enviar e-mail", e);
-        }
+        Email.enviarEmail(subject, messageBody, cliente.getEmail());
     }
 
     public Cliente lerClienteJSON() throws IOException {
