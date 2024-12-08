@@ -5,14 +5,12 @@ public class Utilizador {
     private String nome;
     private String email;
 
-    // Construtor
     public Utilizador(int id, String nome, String email) {
         this.id = id;
         this.nome = nome;
         this.email = email;
     }
 
-    // Getter e Setter para ID
     public int getId() {
         return id;
     }
@@ -21,7 +19,6 @@ public class Utilizador {
         this.id = id;
     }
 
-    // Getter e Setter para Nome
     public String getNome() {
         return nome;
     }
@@ -30,7 +27,6 @@ public class Utilizador {
         this.nome = nome;
     }
 
-    // Getter e Setter para Email
     public String getEmail() {
         return email;
     }
@@ -39,7 +35,6 @@ public class Utilizador {
         this.email = email;
     }
 
-    // toString para exibir o objeto como String
     @Override
     public String toString() {
         return "Utilizador{" +
