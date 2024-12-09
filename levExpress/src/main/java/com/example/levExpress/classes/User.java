@@ -1,11 +1,11 @@
 package org.example;
 
-public class Utilizador {
+public class Use {
     private int id;
     private String nome;
     private String email;
 
-    public Utilizador(int id, String nome, String email) {
+    public User(int id, String nome, String email) {
         this.id = id;
         this.nome = nome;
         this.email = email;
