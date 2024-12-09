@@ -1,6 +1,6 @@
-package org.example;
+package com.example.levExpress.classes;
 
-public class Use {
+public class User {
     private int id;
     private String nome;
     private String email;
