@@ -9,14 +9,11 @@ import io.camunda.zeebe.spring.client.annotation.JobWorker;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 @Component
-public class registarDetalhesEncomenda {
+public class RegistarDetalhesEncomenda {
 
     Map<String, Object> detalhesEncomenda;
     Gson gson = new Gson(); //converter as strings JSON em objetos

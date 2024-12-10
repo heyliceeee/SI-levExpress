@@ -1,16 +1,14 @@
-package com.example.sistemaApoio.sendTask;
+package com.example.levExpress.gestaoavaliacao.sendTask;
 
-import com.example.sistemaApoio.classes.Cliente;
-import com.example.sistemaApoio.classes.Pedido;
-import com.example.sistemaApoio.utils.Email;
+import com.example.levExpress.gestaodentregas.Email;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.camunda.zeebe.client.api.response.ActivatedJob;
 import io.camunda.zeebe.client.api.worker.JobClient;
 import io.camunda.zeebe.spring.client.annotation.JobWorker;
 import org.springframework.stereotype.Component;
-
 import java.io.File;
 import java.io.IOException;
+import com.example.levExpress.classes.*;
 
 @Component
 public class NotificarCliente {

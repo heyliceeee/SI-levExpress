@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class arquivarProcesso {
+public class ArquivarProcesso {
 
     ObjectMapper objectMapper = new ObjectMapper(); // Criar ObjectMapper para manipular o JSON
 

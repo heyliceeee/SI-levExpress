@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Component
-public class notificarEntregadoresDisponiveis {
+public class NotificarEntregadoresDisponiveis {
     File jsonFile = new File("D:\\githubProjects\\SI-levExpress\\levExpress\\src\\main\\java\\com\\example\\levExpress\\gestaodentregas\\BD.json"); // Caminho do ficheiro JSON
     ObjectMapper objectMapper = new ObjectMapper(); // Criar ObjectMapper para manipular o JSON
 

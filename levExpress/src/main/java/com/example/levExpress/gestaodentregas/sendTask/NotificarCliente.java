@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Component
-public class notificarCliente {
+public class NotificarCliente {
     File jsonFile = new File("D:\\githubProjects\\SI-levExpress\\levExpress\\src\\main\\java\\com\\example\\levExpress\\gestaodentregas\\BD.json"); // Caminho do ficheiro JSON
     ObjectMapper objectMapper = new ObjectMapper(); // Criar ObjectMapper para manipular o JSON
 

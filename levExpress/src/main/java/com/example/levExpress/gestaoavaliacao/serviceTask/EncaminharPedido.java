@@ -1,4 +1,4 @@
-package com.example.sistemaApoio.serviceTask;
+package com.example.levExpress.gestaoavaliacao.serviceTask;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -12,20 +12,20 @@ import java.io.IOException;
 import java.util.Map;
 
 @Component
-public class ClassificarPedido {
+public class EncaminharPedido {
 
-    @JobWorker(type = "classificar-pedido", fetchAllVariables = true)
+    @JobWorker(type = "encaminhar-pedido", fetchAllVariables = true)
     public void handle(final JobClient client, final ActivatedJob job) {
         try {
             Map<String, Object> detalhesPedido = job.getVariablesAsMap();
-            atualizarClassificacao(detalhesPedido);
+            encaminharParaEquipe(detalhesPedido);
         } catch (Exception e) {
-            System.err.println("Erro classificar-pedido -> " + e.getMessage());
+            System.err.println("Erro encaminhar-pedido -> " + e.getMessage());
             e.printStackTrace();
         }
     }
 
-    public void atualizarClassificacao(Map<String, Object> detalhesPedido) throws IOException {
+    public void encaminharParaEquipe(Map<String, Object> detalhesPedido) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         File jsonFile = new File("D:\\dadosSistema\\pedidosApoio.json");
         ObjectNode rootNode = (ObjectNode) objectMapper.readTree(jsonFile);
@@ -33,13 +33,13 @@ public class ClassificarPedido {
         // Obter o pedido existente
         ObjectNode pedidoNode = (ObjectNode) rootNode.get("pedido-apoio");
 
-        // Atualizar classificação e status
-        pedidoNode.put("classificacao", (String) detalhesPedido.get("classificacao"));
-        pedidoNode.put("status", "classificado");
+        // Atualizar equipe responsável e status
+        pedidoNode.put("equipeResponsavel", (String) detalhesPedido.get("equipeResponsavel"));
+        pedidoNode.put("status", "encaminhado");
 
         // Atualizar o arquivo JSON
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, rootNode);
-        System.out.println("Pedido classificado: " + jsonFile.getAbsolutePath());
+        System.out.println("Pedido encaminhado: " + jsonFile.getAbsolutePath());
     }
 }
 
