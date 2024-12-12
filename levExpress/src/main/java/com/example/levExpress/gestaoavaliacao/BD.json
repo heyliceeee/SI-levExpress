@@ -1,1 +1,55 @@
+{
+  "notificar-cliente" : {
+    "telemovel" : "123456789",
+    "morada" : "Rua Exemplo, 123",
+    "cp" : "12345-678",
+    "cidade" : "Porto",
+    "estado" : "Ativo",
+    "id" : 6,
+    "nome" : "Alice Dias",
+    "email" : "alicedias@example.com",
+    "foto" : "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1732465133/ygbmbkjitd6gld0jfcke.jpg"
+  },
+  "registar-reclamacao" : {
+    "id" : 101,
+    "descricao" : "Produto entregue danificado.",
+    "dataCriacao" : "2024-12-13T10:15+00:00",
+    "estado" : "Em Avaliação",
+    "categoria" : "Danos no Produto",
+    "prioridade" : "Alta",
+    "evidencias" : [
+      "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1732465133/produto_danificado.jpg"
+    ]
+  },
+  "avaliar-reclamacao" : {
+    "idReclamacao" : 101,
+    "avaliador" : "João Silva",
+    "dataAvaliacao" : "2024-12-14T15:45+00:00",
+    "resolucao" : "Reembolso emitido para o cliente.",
+    "status" : "Resolvido"
+  },
+  "feedback-cliente" : {
+    "idReclamacao" : 101,
+    "nomeCliente" : "Alice Dias",
+    "satisfacao" : "Alta",
+    "comentarios" : "O problema foi resolvido rapidamente. Estou satisfeita com o atendimento."
+  },
+  "historico-reclamacoes" : [
+    {
+      "id" : 99,
+      "descricao" : "Entrega atrasada.",
+      "dataCriacao" : "2024-10-01T09:00+00:00",
+      "estado" : "Resolvido",
+      "resolucao" : "Cliente compensado com desconto na próxima compra."
+    },
+    {
+      "id" : 100,
+      "descricao" : "Produto entregue errado.",
+      "dataCriacao" : "2024-11-05T12:30+00:00",
+      "estado" : "Resolvido",
+      "resolucao" : "Produto correto enviado sem custos adicionais."
+    }
+  ]
+}
+
 
