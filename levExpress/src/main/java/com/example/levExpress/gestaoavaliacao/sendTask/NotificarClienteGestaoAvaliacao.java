@@ -11,12 +11,12 @@ import java.io.IOException;
 import com.example.levExpress.classes.*;
 
 @Component
-public class NotificarCliente {
+public class NotificarClienteGestaoAvaliacao {
 
     File jsonFile = new File("D:\\dadosSistema\\pedidosApoio.json"); // Caminho do ficheiro JSON
     ObjectMapper objectMapper = new ObjectMapper(); // Criar ObjectMapper para manipular o JSON
 
-    @JobWorker(type = "notificar-cliente", fetchAllVariables = true)
+    @JobWorker(type = "notificar-cliente-gestaoavaliacao", fetchAllVariables = true)
     public void handleJob(final JobClient client, final ActivatedJob job) throws IOException {
 
         // Informações do pedido e cliente

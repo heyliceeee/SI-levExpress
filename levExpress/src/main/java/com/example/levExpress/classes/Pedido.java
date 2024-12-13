@@ -2,15 +2,15 @@ package com.example.levExpress.classes;
 
 import java.time.LocalDate;
 
-public class ClassificarPedido {
+public class Pedido {
     private String titulo;
     private String descricao;
     private LocalDate dataResolucao;
     private int classificacao;
 
-    public ClassificarPedido() {}
+    public Pedido() {}
 
-    public ClassificarPedido(String titulo, String descricao, LocalDate dataResolucao, int classificacao) {
+    public Pedido(String titulo, String descricao, LocalDate dataResolucao, int classificacao) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataResolucao = dataResolucao;

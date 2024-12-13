@@ -1,0 +1,11 @@
+{
+  "pedido-apoio" : {
+    "cliente" : null,
+    "tipoProblema" : null,
+    "detalhes" : null,
+    "dataCriacao" : null,
+    "status" : "encaminhado",
+    "classificacao" : null,
+    "equipeResponsavel" : null
+  }
+}

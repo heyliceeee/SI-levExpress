@@ -27,7 +27,7 @@ public class EncaminharPedido {
 
     public void encaminharParaEquipe(Map<String, Object> detalhesPedido) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        File jsonFile = new File("D:\\dadosSistema\\pedidosApoio.json");
+        File jsonFile = new File("D:\\githubProjects\\SI-levExpress\\levExpress\\src\\main\\java\\com\\example\\levExpress\\gestaoavaliacao\\pedidosApoio.json");
         ObjectNode rootNode = (ObjectNode) objectMapper.readTree(jsonFile);
 
         // Obter o pedido existente
