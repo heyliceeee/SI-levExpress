@@ -1,105 +1,93 @@
 {
-  "notificar-entregadores-disponiveis" : [ {
-    "nome" : "Mafaldinha Pereira",
-    "email" : "mp@hotmail.com",
-    "cidade" : "Porto",
-    "foto" : "foto.png",
-    "estrelas" : 4.5
-  } ],
-  "notificar-cliente" : {
-    "telemovel" : "123456789",
-    "morada" : "Rua Exemplo, 123",
-    "cp" : "12345-678",
-    "cidade" : "Porto",
-    "mediaAvaliacao" : 0,
-    "estado" : "Ativado",
-    "id" : 6,
-    "nome" : "Alice Dias",
-    "email" : "alicedias@example.com",
-    "foto" : "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1732465133/ygbmbkjitd6gld0jfcke.jpg"
+  "notificar-entregadores-disponiveis": [
+    {
+      "nome": "Mafaldinha Pereira",
+      "email": "mp@hotmail.com",
+      "cidade": "Porto",
+      "foto": "foto.png",
+      "estrelas": 4.5
+    }
+  ],
+  "notificar-cliente": {
+    "telemovel": "123456789",
+    "morada": "Rua Exemplo, 123",
+    "cp": "12345-678",
+    "cidade": "Porto",
+    "mediaAvaliacao": 0,
+    "estado": "Ativado",
+    "id": 6,
+    "nome": "Alice Dias",
+    "email": "alicedias@example.com",
+    "foto": "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1732465133/ygbmbkjitd6gld0jfcke.jpg"
   },
-  "registar-detalhes-encomenda" : {
-    "origem" : "Universidade - Escola Superior de Tecnologia e Gestão de Felgueiras, Rua António Pinto Ferreira, Margaride (Santa Eulália), Várzea, Lagares, Varziela e Moure, Felgueiras, Porto, 4610-165, Portugal",
-    "destino" : "Água Longa, Santo Tirso, Porto, Portugal",
-    "peso" : "10kg",
-    "dataInicio" : "2024-12-13T21:30+00:00",
-    "duracao" : "31 min",
-    "foto" : "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1731501534/lqagdhvetisemmzom0ij.jpg",
-    "descricao" : "Encomenda de revistas e jornais.",
-    "estado" : "entregue",
-    "dimensao" : {
-      "altura" : "11cm",
-      "largura" : "22cm",
-      "profundidade" : "33cm"
+  "registar-detalhes-encomenda": {
+    "origem": "Universidade - Escola Superior de Tecnologia e Gestão de Felgueiras, Rua António Pinto Ferreira, Margaride (Santa Eulália), Várzea, Lagares, Varziela e Moure, Felgueiras, Porto, 4610-165, Portugal",
+    "destino": "Água Longa, Santo Tirso, Porto, Portugal",
+    "peso": "10kg",
+    "dataInicio": "2024-12-13T21:30+00:00",
+    "duracao": "31 min",
+    "foto": "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1731501534/lqagdhvetisemmzom0ij.jpg",
+    "descricao": "Encomenda de revistas e jornais.",
+    "estado": "entregue",
+    "dimensao": {
+      "altura": "11cm",
+      "largura": "22cm",
+      "profundidade": "33cm"
     }
   },
-  "proposta" : {
-    "origem" : "Universidade - Escola Superior de Tecnologia e Gestão de Felgueiras, Rua António Pinto Ferreira, Margaride (Santa Eulália), Várzea, Lagares, Varziela e Moure, Felgueiras, Porto, 4610-165, Portugal",
-    "destino" : "Água Longa, Santo Tirso, Porto, Portugal",
-    "peso" : "10kg",
-    "dataInicio" : "2024-12-13T21:30+00:00",
-    "duracao" : "31 min",
-    "foto" : "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1731501534/lqagdhvetisemmzom0ij.jpg",
-    "descricao" : "Encomenda de revistas e jornais.",
-    "estado" : "entregue",
-    "dimensao" : {
-      "altura" : "11cm",
-      "largura" : "22cm",
-      "profundidade" : "33cm"
+  "proposta": {
+    "origem": "Universidade - Escola Superior de Tecnologia e Gestão de Felgueiras, Rua António Pinto Ferreira, Margaride (Santa Eulália), Várzea, Lagares, Varziela e Moure, Felgueiras, Porto, 4610-165, Portugal",
+    "destino": "Água Longa, Santo Tirso, Porto, Portugal",
+    "peso": "10kg",
+    "dataInicio": "2024-12-13T21:30+00:00",
+    "duracao": "31 min",
+    "foto": "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1731501534/lqagdhvetisemmzom0ij.jpg",
+    "descricao": "Encomenda de revistas e jornais.",
+    "estado": "entregue",
+    "dimensao": {
+      "altura": "11cm",
+      "largura": "22cm",
+      "profundidade": "33cm"
     }
-  }
-}
-
-{
-  "notificar-cliente" : {
-    "telemovel" : "123456789",
-    "morada" : "Rua Exemplo, 123",
-    "cp" : "12345-678",
-    "cidade" : "Porto",
-    "estado" : "Ativo",
-    "id" : 7,
-    "nome" : "Alice Dias",
-    "email" : "alicedias@example.com",
-    "foto" : "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1732465133/ygbmbkjitd6gld0jfcke.jpg"
   },
-  "registar-reclamacao" : {
-    "id" : 111,
-    "descricao" : "Produto entregue danificado.",
-    "dataCriacao" : "2024-12-13T10:15+00:00",
-    "estado" : "Em Avaliação",
-    "categoria" : "Danos no Produto",
-    "prioridade" : "Alta",
-    "evidencias" : [
+  "registar-reclamacao": {
+    "id": 111,
+    "descricao": "Produto entregue danificado.",
+    "dataCriacao": "2024-12-13T10:15+00:00",
+    "estado": "Em Avaliação",
+    "categoria": "Danos no Produto",
+    "prioridade": "Alta",
+    "evidencias": [
       "https://res.cloudinary.com/dzwjsjsgt/image/upload/v1732465133/produto_danificado.jpg"
     ]
   },
-  "avaliar-reclamacao" : {
-    "idReclamacao" : 111,
-    "avaliador" : "João Silva",
-    "dataAvaliacao" : "2024-12-14T15:45+00:00",
-    "resolucao" : "Reembolso emitido para o cliente.",
-    "status" : "Resolvido"
+  "avaliar-reclamacao": {
+    "idReclamacao": 111,
+    "avaliador": "João Silva",
+    "dataAvaliacao": "2024-12-14T15:45+00:00",
+    "resolucao": "Reembolso emitido para o cliente.",
+    "status": "Resolvido"
   },
-  "feedback-cliente" : {
-    "idReclamacao" : 111,
-    "nomeCliente" : "Alice Dias",
-    "satisfacao" : "Alta",
-    "comentarios" : "O problema foi resolvido rapidamente. Estou satisfeita com o atendimento."
+  "feedback-cliente": {
+    "idReclamacao": 111,
+    "nomeCliente": "Alice Dias",
+    "satisfacao": "Alta",
+    "comentarios": "O problema foi resolvido rapidamente. Estou satisfeita com o atendimento."
   },
-  "historico-reclamacoes" : [
+  "historico-reclamacoes": [
     {
-      "id" : 100,
-      "descricao" : "Entrega atrasada.",
-      "dataCriacao" : "2024-10-01T09:00+00:00",
-      "estado" : "Resolvido",
-      "resolucao" : "Cliente compensado com desconto na próxima compra."
+      "id": 100,
+      "descricao": "Entrega atrasada.",
+      "dataCriacao": "2024-10-01T09:00+00:00",
+      "estado": "Resolvido",
+      "resolucao": "Cliente compensado com desconto na próxima compra."
     },
     {
-      "id" : 101,
-      "descricao" : "Produto entregue errado.",
-      "dataCriacao" : "2024-11-05T12:30+00:00",
-      "estado" : "Resolvido",
-      "resolucao" : "Produto correto enviado sem custos adicionais."
+      "id": 101,
+      "descricao": "Produto entregue errado.",
+      "dataCriacao": "2024-11-05T12:30+00:00",
+      "estado": "Resolvido",
+      "resolucao": "Produto correto enviado sem custos adicionais."
     }
   ]
 }
